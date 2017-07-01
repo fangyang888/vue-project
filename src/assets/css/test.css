@@ -1,0 +1,21 @@
+#repository{
+  position: fixed;
+  /* margin: 5px 10px; */
+  background-color: #efefef;
+  margin-top: 45px;
+  width: 100%;
+  z-index: 10001;
+  /* border: 1px solid; */
+  height: 55px;
+
+}
+body{
+  overflow: hidden;
+}
+.repository-input {
+  margin: 5px;
+}
+#repository .vux-x-input.weui-cell {
+  background-color: white;
+  border-radius: 8px;
+}
