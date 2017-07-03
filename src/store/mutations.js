@@ -6,8 +6,7 @@ export default {
     // state.time = data.time
     axios.post(data.url,data.value)
       .then(({ data }) => {
-        console.log(data.rowSet);
-        state.List = data.rowSet;
+         state.List = data.rowSet;
 
       });
 
