@@ -126,9 +126,8 @@
         this.updateList({"time":'1023',"vaule":'123'});
 
         setTimeout(()=> {
-          this.pageIndex=1;
           this.showList=[];
-
+          this.pageIndex=1;
           this.getPageData(1);
           this.$refs.my_scroller.finishPullToRefresh();
           this.noData=false;
@@ -229,12 +228,8 @@
       reqXml += "</root>";
       let  url='api/CommonServlet?actType=5&isParse=0';
       this.repositoryList({"url":url,"value":reqXml});
-//     this.getRequestData();
-
       this.$nextTick(()=>{
-      this.List=this.getList;
-      console.log(this.List)
-      console.log("=22222===")
+         this.List=this.getList;
          this.totalPage=this.getTotal(this.List.length);
       });
 
