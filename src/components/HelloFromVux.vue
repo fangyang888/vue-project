@@ -101,7 +101,9 @@
         this.$router.push({
           path:'/detail',
           query:{
-            obj:item
+            id:item.ATTACHE_ID,
+            title:item.TITLE,
+            content:item.CONTENT
           }
         })
       },
@@ -228,11 +230,11 @@
       let  url='api/CommonServlet?actType=5&isParse=0';
       this.repositoryList({"url":url,"value":reqXml});
 //     this.getRequestData();
-      this.$nextTick(()=>{
 
-        console.log("=3333===")
-          console.log(this.getList)
-         this.List=this.getList;
+      this.$nextTick(()=>{
+      this.List=this.getList;
+      console.log(this.List)
+      console.log("=22222===")
          this.totalPage=this.getTotal(this.List.length);
       });
 
