@@ -10,7 +10,7 @@
 
 }
 body{
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 .repository-input {
   margin: 5px;
@@ -18,4 +18,7 @@ body{
 #repository .vux-x-input.weui-cell {
   background-color: white;
   border-radius: 8px;
+}
+:local(.className){
+  background:red;
 }
