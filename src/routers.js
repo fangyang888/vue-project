@@ -1,5 +1,6 @@
 import Repository from './components/Repository'
 import RepositoryDetail from './components/RepositoryDetail'
+import MyList from './components/MyList'
 
 
 const routers = [
@@ -13,6 +14,11 @@ const routers = [
     path: '/repositoryDetail',
     component: RepositoryDetail,
     meta:{title:'详情'}
+  },
+  {
+    path: '/list',
+    component: MyList,
+    meta:{title:'列表'}
   }
 ]
 
