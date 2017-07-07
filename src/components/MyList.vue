@@ -1,6 +1,7 @@
-<template>
+<template xmlns:v-on="">
     <div>
-      <list-component :list="list" :searchkey="searchkey"  :columns="columns" :mydata="mydata"></list-component>
+      <list-component :url="url" :reqData="reqData" :columns="columns"
+                      :placeholder="placeholder" v-on:increment="increment"></list-component>
     </div>
 </template>
 
@@ -14,16 +15,39 @@
             return {
               list:[{name:"zhangsh",age:12,time:'2017-10-12'},{name:"zhangsh",age:14,time:'2017-11-12'}],
               searchkey:'',
-              columns:['name','age','time'],
-              mydata:{"name":"hash","age":123}
+              columns:['TITLE','SUBMIT_STAFF','UPDATE_TIME'],
+              mydata:{"name":"hash","age":123},
+              url:'api/CommonServlet?actType=5&isParse=0',
+              placeholder:'搜索标题、关键字、发表人'
+
 
             }
         },
         computed: {
-
+          reqData(){
+            var reqXml = "<root>";
+            reqXml += "<rsQry>";
+            reqXml += "<rsId>" + 35760010 + "</rsId>";
+            reqXml += "<excuteType>" + 0 + "</excuteType>";
+            reqXml += "</rsQry>";
+            reqXml += "</root>";
+            return reqXml;
+          }
         },
         created(){
 
+        },
+        methods:{
+          increment(item){
+            this.$router.push({
+              path: '/repositoryDetail',
+              query: {
+                id: item.ATTACHE_ID,
+                title: item.TITLE,
+                content: item.CONTENT
+              }
+            })
+          }
         }
     }
 </script>
